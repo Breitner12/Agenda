@@ -1,30 +1,30 @@
 ## Evidencias realizadas
 registros de notas
 
-## hoja de vida
+## Hoja de vida
 
 aprendimos a realizar una hoja de vida con markdown
 
 [hoja de vida] (https://github.com/Breitner12/Hoja-de-vida.git)
 
-## visual Basic
+## Visual Basic
 
 se aprendio a ponerle el valor a la variable.
 
 <a href="https://ibb.co/phHWY68"><img src="https://i.ibb.co/fD38jV5/visual-basic.png" alt="visual-basic" border="0"></a>
 
-## starUMTL
+## StarUMTL
 
 en starUMTL la variable se usa en un rectangulo.
 
 <a href="https://ibb.co/WfSHBnM"><img src="https://i.ibb.co/hVpg2s4/strauml.png" alt="strauml" border="0"></a>
 
 
-## algoritmo
+## Algoritmo 
 
 <a href="https://ibb.co/WfSHBnM"><![image](https://user-images.githubusercontent.com/110871046/186992597-202a63ac-a429-4fce-b16f-e16c07db776e.png)></a>
 
-## ejercicio mientras que
+## Ejercicio mientras que
 
 ~~~
 Sub prueba()
@@ -55,7 +55,7 @@ Sub prueba()
 End Sub
 ~~~
 
-## ejercicio busqueda
+## Ejercicio busqueda
 
 ~~~
 Sub ejercicio()
@@ -76,7 +76,7 @@ Sub ejercicio()
     Wend
 End Sub
 ~~~
-## formulario visual basic
+## Formulario visual basic
 
 ~~~
 Private Sub btneliminar_Click()
@@ -218,7 +218,7 @@ class Operacion {
 }
 ~~~
 
-## ejercicio 2  de dartpad
+## Ejercicio 2  de dartpad
 
 ~~~
 void main() {
@@ -251,6 +251,141 @@ class Person {
   void edadMas(p) {
     int s = p + 5;
     print('su edad es: $s ' 'años');
+  }
+}
+~~~
+
+## Constructor en dartpad
+
+~~~
+
+void main() {
+  Person person = new Person(s: "Masculino", n: "jaime ");
+
+  person.nombre = "jaime";
+  person.apellido = "Mora";
+  person.edad = 45;
+  person.sexo = "Masculino";
+  print('su nombre completo es:${person.nombreCompleto()}');
+  person.edadMas(person.edad);
+  print('su sexo es:${person.sexo}');
+}
+
+class Person {
+  String? nombre;
+  String? sexo;
+  String? apellido;
+  int? edad;
+
+  Person({String? n, String? s}) {
+    nombre = n;
+    sexo = s;
+  }
+  String nombreCompleto() {
+    String? n = nombre! + " " + apellido!;
+    return n;
+  }
+
+  void edadMas(p) {
+    int s = p + 5;
+    print('su edad es: $s ' 'años');
+  }
+}
+~~~
+
+## Herencia dartpad
+
+~~~
+
+void main() {
+  Leon leon = new Leon();
+  leon.edad = 55;
+  leon.habitad = "africa";
+  leon.especie = "depredador";
+  leon.carne = "gasela";
+  Conejo conejo = new Conejo();
+  conejo.especie = "herbivoro";
+  conejo.edad = 22;
+  conejo.habitad = "sudamerica";
+  Hiena hiena = new Hiena();
+  hiena.especie = "depredador";
+  hiena.edad = 55;
+  hiena.habitad = "africa";
+  Hombre hombre = new Hombre();
+  hombre.edad = 89;
+  hombre.especie = "humana";
+  hombre.habitad = "cualquiera";
+
+  print(
+      'la especie es: ${leon.especie},su edad es: ${leon.edad} y su comida favorita es la ${leon.carne}');
+  (leon.edad);
+}
+
+class Animal {
+  String? especie;
+  int? edad;
+  String? habitad;
+}
+
+class Omnivoro extends Animal {}
+
+String? detodito;
+
+class Carnivoro extends Animal {
+  String? carne;
+}
+
+class Herbivoro extends Animal {
+  String? frutas;
+}
+
+class Conejo extends Herbivoro {}
+
+class Leon extends Carnivoro {}
+
+class Hiena extends Carnivoro {}
+
+class Hombre extends Omnivoro {}
+
+~~~
+
+## Metodo string dartpad
+
+~~~
+
+void main() {
+  List lista = ["colombia", "peru", "alemania"];
+  List hoja = [11444, 32324, 12131];
+  List docu = ["este", "norte", "oeste"];
+  for (int i = 0; i < 3; i++) {
+    Empresa empresa =
+        new Empresa(pais: lista[i], numero: hoja[i], oficina: docu[i]);
+
+    print(empresa.generalCodigo());
+  }
+}
+
+class Empresa {
+  String? pais;
+  int? numero;
+  String? oficina;
+
+  Empresa({this.pais, this.numero, this.oficina});
+
+  String? generalCodigo() {
+    String p = pais!.substring(1, 3);
+    int ope = oficina!.length;
+    int ofi = ope - 3;
+    String? ofici = oficina!.substring(ofi, ope);
+    String? pasar = numero.toString();
+    String numeros = pasar.substring(2, 3);
+    return "$p$numeros$ofici";
+  }
+
+  void cantCaracteres() {
+    int p = pais!.length;
+    int ofici = oficina!.length;
+    String? pasar = numero!.toString();
   }
 }
 
