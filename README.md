@@ -218,7 +218,7 @@ class Operacion {
 }
 ~~~
 
-## ejercicio 2 dart
+## ejercicio 2  de dartpad
 
 ~~~
 void main() {
